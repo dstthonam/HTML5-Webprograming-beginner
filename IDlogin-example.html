@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 서식 만들기</title>
+    <!-- <style>
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+    </style> -->
+  </head>
+  <body>
+    <div>
+      <div>
+        <!-- 시작그룹 체크리스트, 라디오 타입으로 만들기 -->
+        <h4>시작 그룹</h4>
+        <form action="#" method="post">
+          <input id="new-tab" type="radio" value="" name="group">
+          <label for="new-tab">새 탭 페이지 열기</label><br>
+          <input id="stop-point" type="radio" value="" name="group"> 
+          <label for="stop-point">중단한 위치에서 계속하기</label><br>
+          <input id="pages" type="radio" value="" name="group">
+          <label for="pages">특정 페이지 또는 페이지 모음 열기</label><br>
+        </form>
+      </div>
+      <div>
+        <!-- 개인정보 및 보안, 체크박스 타입으로 만들기 -->
+        <h4>개인정보 및 보안</h4>
+        <form action="#" method="post">
+          <input id="synchronization" type="checkbox" value="" name="personal-data">
+          <label for="synchronization">동기화 및 서비스</label><br>
+          <input id="login-avaliable" type="checkbox" value="" name="personal-data"> 
+          <label for="login-avaliable">로그인 허용</label><br>
+          <input id="page-preload" type="checkbox" value="" name="personal-data">
+          <label for="page-preload">페이지 미리 로드</label><br>
+        </form>
+      </div>
+    </div>
+    <div>
+      <!-- 로그인 양식 만들기(html만 사용하여) -->
+      <h1>글 작성하기</h1>
+      <form action="#" method="post">
+        <table>
+          <tr>
+            <td><label for="username"><b>작성자</b></label></td>
+            <td><input type="text" id="username" placeholder="이름을 넣어주세요." name="username"></td>
+          </tr>
+          <tr>
+            <td><label for="id"><b>아이디</b></label></td>
+            <td><input type="text" id="id" placeholder="아이디를 넣어주세요." name="id"></td>
+          </tr>
+          <tr>
+            <td><label for="email"><b>이메일</b></label></td>
+            <td><input type="text" id="email" placeholder="이메일을 넣어주세요." name="email-1"> <b>@</b></td>
+            <td><input type="text" id="email" name="email-2"></td>
+          </tr>
+          <tr>
+            <td><label for="phonenumber"><b>휴대폰</b></label></td>
+            <div>
+              <td>
+                <!-- '010 -' 바로 옆에 붙이기 -->
+                <select name="phonenumber-1" id="phonenumber">
+                  <option>010</option>
+                  <option>011</option>
+                  <option>019</option>
+                  <option>016</option>
+                </select> -
+              </td>
+            </div>
+            <td><input type="text" id="phonenumber" value="" name="phonenumber2"> -</td>
+            <td><input type="text" id="phonenumber" value="" name="phonenumber3"></td>
+          </tr>
+          <tr>
+            <td><label for="title"><b>글제목</b></label></td>
+            <td><input id="title" type="text" placeholder="글제목을 넣어주세요." name="title"></td>
+          </tr>
+          <tr>
+            <td style="text-align: center;"><b>내용</b></td>
+            <td><textarea placeholder="내용을 넣어주세요." name="content" id="content-box" cols="25" rows="10"></textarea></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="submit" value="submit"></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
