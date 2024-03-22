@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ellipsis</title>
+    <!-- 글자생략(Ellipsis) + 연습문제2(네이버 웹페이지 레이아웃 클론코딩) 예제(p.240, 246) -->
+    <style>
+      * {
+        margin: 0 auto;
+        padding: 0;
+        width: 1000px;
+      }
+      body {
+        margin-left: 20px;
+      }
+      .logo {
+        font-size: 2em;
+        font-weight: 800;
+        align-items: start;
+        margin: 30px 0;
+      }
+      .menubar {
+        float: left;
+        width: 690px;
+        height: 50px;
+        padding: 0 25px;
+        line-height: 50px;
+        background: greenyellow;
+      }
+      ul {
+        display: flex;
+        flex-direction: row;
+      }
+      li {
+        list-style-type: none;
+        padding: 0 5px;
+        width: 60px;
+        margin: 0;
+      }
+      .searchbanner {
+        float: right;
+        width: 150px;
+        height: 50px;
+        padding: 0 25px;
+        line-height: 50px;
+        background: plum;
+        text-align: right;
+      }
+      .container {
+        overflow: hidden;
+      }
+      .left {
+        float: left;
+        padding: 30px;
+        width: 530px;
+        height: 290px;
+        background: orange;
+        margin: 10px 5px 10px 0;
+      }
+      .right {
+        padding: 30px;
+        float: right;
+        width: 330px;
+        height: 290px;
+        background: pink;
+        margin: 10px 0 10px 5px;
+      }
+      .ellipsis {
+        white-space: pre-line;
+        overflow-y: hidden;
+        text-overflow: ellipsis;
+      }
+      .footer {
+        width: 1000px;
+        height: 60px;
+        margin: 10px 0;
+        background-color: salmon;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo">Logo</div>
+    <div class="container">
+      <div class="menubar">
+        <ul>
+          <li>메일</li>
+          <li>카페</li>
+          <li>블로그</li>
+          <li>쇼핑</li>
+          <li>뉴스</li>
+          <li>증권</li>
+          <li>부동산</li>
+          <li>지도</li>
+          <li>웹툰</li>
+          <li>치지직</li>     
+        </ul>
+      </div>
+      <div>
+        <li class="searchbanner">실시간 검색 순위</li>
+      </div>
+    </div>  
+    <div class="container">
+      <div class="left ellipsis">
+        대통령은 국민의 보통·평등·직접·비밀선거에 의하여 선출한다. 국회의원은 그 지위를 남용하여 국가·공공단체 또는 기업체와의 계약이나 그 처분에 의하여 재산상의 권리·이익 또는 직위를 취득하거나 타인을 위하여 그 취득을 알선할 수 없다. 국회의원은 국가이익을 우선하여 양심에 따라 직무를 행한다. 이 헌법공포 당시의 국회의원의 임기는 제1항에 의한 국회의 최초의 집회일 전일까지로 한다. 저작자·발명가·과학기술자와 예술가의 권리는 법률로써 보호한다. 중앙선거관리위원회는 법령의 범위안에서 선거관리·국민투표관리 또는 정당사무에 관한 규칙을 제정할 수 있으며, 법률에 저촉되지 아니하는 범위안에서 부규율에 관한 규칙을 제정할 수 있다.
+      </div>
+      <div class="right ellipsis">
+        모든 국민은 사생활의 비밀과 자유를 침해받지 아니한다. 국가는  대외무역을 육성하며, 이를 규제·조정할 수 있다. 국회는 의원의 자격을  심사하며, 의원을 징계할 수 있다. 비상계엄이 선포된 때에는 법률이 정하는 바에 의하여 영장제도, 언론·출판·집회·결사의 자유, 정부나 법원의 권한에 관하여 특별한 조치를 할 수 있다. 당은  목적·조직과 활동이 민주적이어야 하며, 국민의 정치적 의사형성에 참여하는데 필요한 조직을 가져야 한다. 모든 국민은 법률이 정하는 바에 의하여 무담임권을   가진다. 연소자의 근로는 특별한 보호를 받는다. 군인·군무원·경찰공무원 기타 법률이 정하는 자가 전투·훈련등 직무집행과 관련하여 받은 손해에 대하여는 법률이 정하는 보상외에 국가 또는 공공단체에 공무원의 직무상 불법행위로 인한 배상은 청구할 수 없다.
+      </div>
+    </div>
+    <div class="container">
+      <div class="left ellipsis">
+        대통령은 국민의 보통·평등·직접·비밀선거에 의하여 선출한다. 국회의원은 그 지위를 남용하여 국가·공공단체 또는 기업체와의 계약이나 그 처분에 의하여 재산상의 권리·이익 또는 직위를 취득하거나 타인을 위하여 그 취득을 알선할 수 없다. 국회의원은 국가이익을 우선하여 양심에 따라 직무를 행한다. 이 헌법공포 당시의 국회의원의 임기는 제1항에 의한 국회의 최초의 집회일 전일까지로 한다. 저작자·발명가·과학기술자와 예술가의 권리는 법률로써 보호한다. 중앙선거관리위원회는 법령의 범위안에서 선거관리·국민투표관리 또는 정당사무에 관한 규칙을 제정할 수 있으며, 법률에 저촉되지 아니하는 범위안에서 부규율에 관한 규칙을 제정할 수 있다.
+      </div>
+      <div class="right ellipsis">
+        모든 국민은 사생활의 비밀과 자유를 침해받지 아니한다. 국가는  대외무역을 육성하며, 이를 규제·조정할 수 있다. 국회는 의원의 자격을  심사하며, 의원을 징계할 수 있다. 비상계엄이 선포된 때에는 법률이 정하는 바에 의하여 영장제도, 언론·출판·집회·결사의 자유, 정부나 법원의 권한에 관하여 특별한 조치를 할 수 있다. 당은  목적·조직과 활동이 민주적이어야 하며, 국민의 정치적 의사형성에 참여하는데 필요한 조직을 가져야 한다. 모든 국민은 법률이 정하는 바에 의하여 무담임권을   가진다. 연소자의 근로는 특별한 보호를 받는다. 군인·군무원·경찰공무원 기타 법률이 정하는 자가 전투·훈련등 직무집행과 관련하여 받은 손해에 대하여는 법률이 정하는 보상외에 국가 또는 공공단체에 공무원의 직무상 불법행위로 인한 배상은 청구할 수 없다.
+      </div>
+    </div>
+    <div class="footer"></div>
+  </body>
+</html>

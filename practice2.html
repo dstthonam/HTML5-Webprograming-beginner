@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>간단한 입력 양식</title>
+  <!-- 책에 있는 예제를 연습한 내용(p.219 13문제) -->
+  <!-- 간단한 로그인 양식 -->
+  <style>
+    .main {
+      background-color: gray;
+      width: 330px;
+      height: 150px;
+      border: 1px solid black;
+    }
+    h1 {
+      margin: 0;
+      text-align: center;
+    }
+    ul {
+      list-style: none;
+      text-align: left;
+      padding: 0;
+    }
+    .box-model {
+      display: flex;
+      font-weight: 800;
+      text-align: center;
+    }
+    .mini-box {
+      width: 70px;
+      margin: 0 20px;
+      outline: hidden;
+      line-height: 30px;
+    }
+    .text-attr {
+      width: 200px;
+      height: 24px;
+      border: 1px solid black;
+      padding: 0;
+      border-radius: 20px;
+      margin: 2px;
+    }
+    button {
+      position: relative;
+      left: 110px;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <h1>간단한 입력 양식</h1>
+    <ul>
+      <div class="box-model">
+        <li class="mini-box">아이디</li>
+        <input type="text" id="Id" name="ID" class="text-attr">
+      </div>
+      <div class="box-model">
+        <li class="mini-box">비밀번호</li>
+        <input type="text" id="Password" name="Password" class="text-attr">
+      </div>
+    <button class="text-attr">제출</button>
+    </ul>
+  </div>
+</body>
+</html>

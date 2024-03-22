@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Absolute Position 2</title>
+    <!-- Absolute Position 2 + fixedBar 예제(p.237, 238) -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: green;
+      }
+      #container {
+        width: 500px;
+        height: 250px;
+        background: orange;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -125px;
+        margin-left: -250px;
+      }
+      .main-box {
+        width: 800px;
+        margin-top: 50px;
+        margin-left: 50px;
+      }
+      .top-bar {
+        background-color: yellow;
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        height: 50px;
+        z-index: 1;
+      }
+      .left-bar {
+        background-color: pink;
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-bar"></div>
+    <div class="left-bar"></div>
+    <div class="main-box">
+      <p>
+        대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서
+        국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가
+        필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한
+        재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할
+        수 있다. 대법원장과 대법관이 아닌 법관의 임기는 10년으로 하며, 법률이
+        정하는 바에 의하여 연임할 수 있다. 국무위원은 국무총리의 제청으로
+        대통령이 임명한다. 중앙선거관리위원회는 대통령이 임명하는 3인, 국회에서
+        선출하는 3인과 대법원장이 지명하는 3인의 위원으로 구성한다. 위원장은
+        위원중에서 호선한다. 국회는 상호원조 또는 안전보장에 관한 조약, 중요한
+        국제조직에 관한 조약, 우호통상항해조약, 주권의 제약에 관한 조약,
+        강화조약, 국가나 국민에게 중대한 재정적 부담을 지우는 조약 또는
+        입법사항에 관한 조약의 체결·비준에 대한 동의권을 가진다.
+      </p>
+    </div>
+    <div id="container">
+      <h1>요소의 중앙에 배치</h1>
+    </div>
+  </body>
+</html>
