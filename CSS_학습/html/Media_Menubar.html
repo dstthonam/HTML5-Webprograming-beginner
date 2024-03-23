@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Media_Menubar</title>
+    <!-- Media를 이용하여 화면 크기에 따른 색깔 변화(p.276) -->
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        width: 960px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      #menu {
+        width: 260px;
+        float: left;
+        margin-top: 50px;
+      }
+      .container {
+        width: 700px;
+        float: right;
+        margin: 50px;
+      }
+      li {
+        list-style-type: none;
+      }
+      /* 스마트폰 사이즈에서는 메뉴바 이동(menubar: left(width), top(short)) */
+      @media screen and (max-width: 767px) {
+        body {
+          width: auto;
+        }
+        #menu {
+          width: auto;
+          float: none;
+        }
+        .container {
+          width: auto;
+          float: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="menu">
+      <ul>
+        <li>menu 1</li>
+        <li>menu 2</li>
+        <li>menu 3</li>
+      </ul>
+    </div>
+    <div class="container">
+      <h1>
+        탄핵결정은 공직으로부터 파면함에 그친다. 그러나, 이에 의하여 민사상이나
+        형사상의 책임이 면제되지는 아니한다. 모든 국민은 거주·이전의 자유를
+        가진다. 국가는 재해를 예방하고 그 위험으로부터 국민을 보호하기 위하여
+        노력하여야 한다. 국토와 자원은 국가의 보호를 받으며, 국가는 그 균형있는
+        개발과 이용을 위하여 필요한 계획을 수립한다.
+      </h1>
+      <p>
+        국교는 인정되지 아니하며, 종교와 정치는 분리된다. 국회의원은 국회에서
+        직무상 행한 발언과 표결에 관하여 국회외에서 책임을 지지 아니한다. 모든
+        국민은 자기의 행위가 아닌 친족의 행위로 인하여 불이익한 처우를 받지
+        아니한다.
+      </p>
+    </div>  
+  </body>
+</html>

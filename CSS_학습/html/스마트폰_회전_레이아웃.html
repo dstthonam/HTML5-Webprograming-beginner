@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>SmartPhone Orientation Layout</title>
+    <!-- 문제 6번 스마트폰 회전 레이아웃(p.276) -->
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        margin: 10px;
+        overflow: hidden;
+      }
+      li {
+        list-style-type: none;
+        border-bottom: 1px solid black;
+      }
+      h3 {
+        border-bottom: 1px solid black;
+        padding: 15px 0;
+        margin-bottom: 20px;
+      }
+      /* 세로 */
+      @media screen and (orientation: portrait) {
+        #menu {
+          display: none;
+        }
+      }
+      /* 가로 */
+      @media screen and (orientation: landscape) {
+        #menu {
+          width: 25%;
+          float: left;
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          margin-right: 10px;
+          padding: 16px;
+        }
+        .container {
+          width: 65%;
+          float: right;
+        }
+        h2 {
+          margin-bottom: 10px;
+        }
+        h4, p {
+          margin-bottom: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="menu">
+      <h2>전화번호</h2>
+      <hr>
+      <ul>
+        <li>
+          <h4>010-XXXX-XXXX</h4>
+          <p>안녕?</p>
+        </li>
+        <li>
+          <h4>010-XXXX-XXXX</h4>
+          <p>과재했어?</p>
+        </li>
+        <li>
+          <h4>010-XXXX-XXXX</h4>
+          <p>산책가자!</p>
+        </li>
+        <li>
+          <h4>010-XXXX-XXXX</h4>
+          <p>밥 먹을래?</p>
+        </li>
+        <li>
+          <h4>010-XXXX-XXXX</h4>
+          <p>뭐해?</p>
+        </li>
+      </ul>
+    </div>
+    <div class="container">
+      <h3>010-XXXX-XXXX</h3>
+      <p>
+        안녕?<br>
+        이 헌법시행 당시의 대법원장과 대법원판사가 아닌 법관은 제1항 단서의 규정에 불구하고 이 헌법에 의하여 임명된 것으로 본다. 정부는 예산에 변경을 가할 필요가 있을 때에는 추가경정예산안을 편성하여 국회에 제출할 수 있다. 외국인은 국제법과 조약이 정하는 바에 의하여 그 지위가 보장된다. 사회적 특수계급의 제도는 인정되지 아니하며, 어떠한 형태로도 이를 창설할 수 없다.
+      </p>
+    </div> 
+  </body>
+</html>
