@@ -1,0 +1,42 @@
+<!-- Chapter 10 연습문제 9번 문제
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Object Model</title>
+  <script>
+    window.onload = function() {
+      let ele = document.getElementById('element');
+      ele.style.color = 'red';
+      ele.innerHTML = 'From JavaScript';
+    }
+  </script>
+</head>
+<body>
+  <h1 id="element">hello.</h1>
+</body>
+</html> -->
+
+<!-- Chapter 10 연습문제 10번 문제
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Query Selector</title>
+</head>
+<body>
+  <h1>Header - 1</h1>
+  <h1>Header - 2</h1>
+  <h1>Header - 3</h1>
+  <script>
+    let headers = document.querySelectorAll('h1');
+    for (let i = 0; i < headers.length; i++){
+      let header = headers[i];
+      header.style.color = 'white';
+      header.style.backgroundColor = 'black';
+    }
+  </script>
+</body>
+</html> -->
