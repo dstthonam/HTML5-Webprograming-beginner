@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LightBox</title>
+  <link href="/JS_학습/css/lightbox.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+  <a href="http://placeholder.com/1280x720" class="light">LightBox</a>
+  <a href="http://placeholder.com/1280x720" class="light">LightBox</a>
+  <a href="http://placeholder.com/1280x720" class="light">LightBox</a>
+  <script src="/JS_학습/js/js-LightBox/lightbox.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('a.light').lightBox();
+    })
+  </script>
+</body>
+</html>

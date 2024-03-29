@@ -1,0 +1,31 @@
+<!-- 연습장 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinity Scroll</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script>
+    $(document).ready(function () {
+      let appendDocument = function () {
+        for (let i = 0; i < 20; i++){
+          $('<h1>Infinity Scroll</h1>').appendTo('body');
+        }
+      };
+      appendDocument();
+      $(window).scroll(function () {
+        let scrollHeight = $(window).scrollTop() + $(window).height();
+        let documentHeight = $(document).height();
+        if (scrollHeight == documentHeight) {
+          appendDocument();
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!-- 연습장 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinity Scroll</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <style>
+    /* 추가된 스타일: 새로운 콘텐츠가 추가될 때 애니메이션 효과를 적용 */
+    h1 {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+  <script>
+    $(document).ready(function () {
+      let appendDocument = function () {
+        for (let i = 0; i < 20; i++){
+          // 추가된 스크립트: 새로운 콘텐츠를 부드럽게 표시
+          $('<h1>Infinity Scroll</h1>').appendTo('body').addClass('show');
+        }
+      };
+      appendDocument();
+      $(window).scroll(function () {
+        let scrollHeight = $(window).scrollTop() + $(window).height();
+        let documentHeight = $(document).height();
+        if (scrollHeight >= documentHeight * 0.9) { // 스크롤이 페이지의 90%에 도달하면 새로운 콘텐츠를 추가
+          appendDocument();
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
