@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery-Slider</title>
+  <style>
+    div.item:nth-child(1) { background: blueviolet;}
+    div.item:nth-child(2) { background: pink;}
+    div.item:nth-child(3) { background: burlywood;}
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script>
+    $(document).ready(function () {
+      let width = $('[data-role="slider"]').attr('data-width');
+      let height = $('[data-role="slider"]').attr('data-height');
+      let count = $('[data-role="slider"] div.item').length;
+      $('[data-role="slider"]').css({
+        position: 'relative',
+        overflow: 'hidden',
+        width: width,
+        height: height
+      }).find('.container').css({
+        position: 'absolute',
+        width: count * width,
+        overflow: 'hidden'
+      }).find('.item').css({
+        width: width,
+        height: height,
+        float: 'left'
+      });
+      let currentPage = 0;
+      let changePage = function () {
+        $('[data-role="slider"] > .container').animate({
+          left: -currentPage * width
+        }, 500);
+      };
+      $('#left-button').click(function () {
+        if (currentPage > 0) {
+          currentPage -= 1;
+          changePage();
+        }
+      });
+      $('#right-button').click(function () {
+        if (currentPage < count - 1) {
+          currentPage += 1;
+          changePage();
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <div data-role="slider" data-width="500" data-height="300">
+    <div class="container">
+      <div class="item">
+        <h1>평화통일정책의 수립에 관한 대통령의 자문에 응하기 위하여 민주평화통일자문회의를 둘 수 있다</h1>
+        <p>국가는 대외무역을 육성하며, 이를 규제·조정할 수 있다. 국회는 법률에 저촉되지 아니하는 범위안에서 의사와 내부규율에 관한 규칙을 제정할 수 있다.</p>
+      </div>
+      <div class="item">
+        <h1>국가는 법률이 정하는 바에 의하여 재외국민을 보호할 의무를 진다.</h1>
+        <p>대통령은 국가의 안위에 관계되는 중대한 교전상태에 있어서 국가를 보위하기 위하여 긴급한 조치가 필요하고 국회의 집회가 불가능한 때에 한하여 법률의 효력을 가지는 명령을 발할 수 있다</p>
+      </div>
+      <div class="item">
+        <h1>헌법재판소 재판관은 탄핵 또는 금고 이상의 형의 선고에 의하지 아니하고는 파면되지 아니한다.</h1>
+        <p>행정각부의 장은 국무위원 중에서 국무총리의 제청으로 대통령이 임명한다.</p>
+      </div>
+    </div>
+  </div>
+  <button id="left-button">←</button>
+  <button id="right-button">→</button>
+</body>
+</html>
