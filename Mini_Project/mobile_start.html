@@ -3,50 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTML5 with Hanbit</title>
-  <link rel="stylesheet" href="/Mini_Project/mobile_start.css">
+  <title>HTML5 with thonam</title>
+  <link rel="stylesheet" href="/Mini_Project/css/mobile_start.css">
   <script></script>
 </head>
 <body>
   <div id="main-header">
     <header class="container">
-      <div>
+      <div id="borderLine">
         <label for="checkbox">▼</label>
-        <h1>Hanbit</h1>
+        <h1>thonam</h1>
       </div>
       <input id="checkbox" checked="checked" type="checkbox">
       <nav>
         <ul>
-          <li><a href="#"></a></li>
-          <li class="active"><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
+          <li><a href="#">Brand<a></li>
+          <li class="active"><a href="#">Network</a></li>
+          <li><a href="#">Store</a></li>
+          <li><a href="#">Support</a></li>
         </ul>
       </nav>
     </header>
   </div>  
+  <script>
+    const btn = document.getElementById('checkbox');
+    const bdL = document.getElementById('borderLine');
+    let isBorderVisible = false;
+    btn.addEventListener('click', function() {
+      if(!isBorderVisible) {
+        bdL.style.borderBottom = '1px solid rgba(0, 0, 0, 0.4)';
+        isBorderVisible = true;
+      } else {
+        bdL.style.borderBottom = 'none';
+        isBorderVisible = false;
+      }
+    });
+  </script>
   <div id="main-content">
     <article class="container">
-      <h1></h1>
-      <p></p>
+      <h1>제안된 헌법개정안은 대통령이 20일 이상의 기간 이를 공고하여야 한다.</h1>
+      <p>형사피해자는 법률이 정하는 바에 의하여 당해 사건의 재판절차에서 진술할 수 있다.</p>
     </article>
   </div>
   <div id="sub-content">
     <article class="container">
-      <h1></h1>
-      <h2></h2>
-      <img src="" alt="">
-      <p></p>
+      <h1>혼자 공부하는 머신러닝+딥러닝</h1>
+      <h2>1:1 과외하듯 배우는 인공지능 자습서<h2>
+      <img src="/Mini_Project/image/image_0.jpg" alt="">
+      <p>모든 국민은 그 보호하는 자녀에게 적어도 초등교육과 법률이 정하는 교육을 받게 할 의무를 진다. 행정각부의 장은 국무위원 중에서 국무총리의 제청으로 대통령이 임명한다.</p>
       <br>
-      <h1></h1>
-      <h2></h2>
-      <img src="" alt="">
-      <p></p>
+      <h1>나도 손글씨 반듯하게 잘 쓰면 소원이 없겠네</h1>
+      <h2>악필 교정부터 유려한 글씨체까지 4주 완성 펜크체 연습법</h2>
+      <img src="/Mini_Project/image/image_1.jpg" alt="">
+      <p>감사원은 세입·세출의 결산을 매년 검사하여 대통령과 차년도국회에 그 결과를 보고하여야 한다. 모든 국민은 자기의 행위가 아닌 친족의 행위로 인하여 불이익한 처우를 받지 아니한다.</p>
     </article>
   </div>
   <div id="main-footer">
     <footer class="container">
-      <div></div>
+      <div>©1999-2024 Example. All rights reserved.</div>
     </footer>
   </div>
 </body>

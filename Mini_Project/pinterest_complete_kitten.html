@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML5 with Hanbit</title>
+  <link rel="stylesheet" href="/Mini_Project/css/pinterest_complete.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.js"></script>
+  <script>
+    $(document).ready(function () {
+      // 외부 메뉴에 호버 이벤트 추가
+      $('.outer-menu').hover(function () {
+        $(this).find('.inner-menu').css('display', 'block');
+      }, function () {
+        $(this).find('.inner-menu').css('display', 'none');
+      });
+      $('#main-section').imagesLoaded(function () {
+        // 이미지가 모두 로드된 후에 Masonry 레이아웃 적용
+        $('#main-section').masonry({
+          itemSelector: '.paper', // Masonry가 적용될 아이템 선택자
+          columnWidth: 230, // 컬럼 너비
+          isAnimated: true // 애니메이션 효과 사용 여부
+        });
+      });
+      // lightbox 보이기 함수
+      function showLightBox() {
+        $('#darken-background').show();
+        $('#darken-background').css('top', $(window).scrollTop());
+        $('body').css('overflow', 'hidden');
+      }
+      // lightbox 숨기기 함수
+      function hideLightBox() {
+        $('#darken-background').hide();
+        $('body').css('overflow', '');
+      }
+      // 배경 클릭 시 lightbox 숨기기
+      $('#darken-background').click(function () {
+        hideLightBox();
+      });
+      // paper 클릭 시 lightbox 보이기
+      $('.paper').click(function () { showLightBox(); });
+      // lightbox 내부 클릭 시 이벤트 버블링 방지
+      $('#lightbox').click(function (event) {
+        event.stopPropagation()
+      });
+    });
+  </script>
+</head>
+<body>
+  <header id="main-header">
+  <!-- 헤더 -->
+  <div class="header-search-form">
+    <!-- 검색 폼 -->
+    <form>
+      <input type="search" class="input-search">
+      <input type="submit" class="input-search-submit" value="검색">
+    </form>
+  </div>
+  <h1 class="header-title">Interest</h1>
+    <!-- 헤더 메뉴 -->
+    <div class="header-menu">
+      <ul class="outer-menu">
+        <li>
+          <a href="#">정보</a>
+          <ul class="inner-menu">
+            <li><a href="#">데이터</a></li>
+            <li><a href="#">데이터</a></li>
+            <li><a href="#">데이터</a></li>
+            <li><a href="#">데이터</a></li>
+            <li><a href="#">데이터</a></li>
+            <li><a href="#">데이터</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="outer-menu">
+        <li>
+          <a href="#">사용자</a>
+          <ul class="inner-menu">
+            <li><a href="#">데이터</a></li>
+            <li><a href="#">데이터</a></li>
+            <li><a href="#">데이터</a></li>
+            <li><a href="#">데이터</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <!-- 메인 내비게이션 -->
+  <nav id="main-navigation">
+    <ul>
+      <li><a href="#">Following</a></li>
+      <li><a href="#">Categories</a></li>
+      <li><a href="#">Everything</a></li>
+      <li><a href="#">Popular</a></li>
+      <li><a href="#">Gift</a></li>
+    </ul>
+  </nav>
+  <!-- 메인 섹션 -->
+  <section id="main-section">
+    <!-- 여러 개의 노드로 이루어진 섹션 -->
+    <!-- 여러 개의 .paper 클래스를 가진 아이템들 -->
+    <!-- 이미지와 설명을 포함한 각각의 종이(paper) 아이템 -->
+    <div class="paper">
+      <div class="paper-holder">
+        <a><img width="190" src="/Mini_Project/image/image_2.jpg"></a>
+      </div>
+      <p class="paper-description">Lorem ipsum dolor sit amet</p>
+      <div class="paper-content">
+        <a class="paper-link" href="#">
+          <img src="/Mini_Project/image/image_25.jpg">
+        </a>
+        <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non diam neque. Maecenas mauris massa, aliquet ut mollis fermentum, pellentesque et leo.</p>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="paper-holder">
+        <a><img width="190" src="/Mini_Project/image/image_3.jpg"></a>
+      </div>
+      <p class="paper-description">Lorem ipsum dolor sit amet</p>
+      <div class="paper-content">
+        <a class="paper-link" href="#">
+          <img src="/Mini_Project/image/image_25.jpg">
+        </a>
+        <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non diam neque. Maecenas mauris massa, aliquet ut mollis fermentum, pellentesque et leo.</p>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="paper-holder">
+        <a><img width="190" src="/Mini_Project/image/image_4.jpg"></a>
+      </div>
+      <p class="paper-description">Lorem ipsum dolor sit amet</p>
+      <div class="paper-content">
+        <a class="paper-link" href="#">
+          <img src="/Mini_Project/image/image_25.jpg">
+        </a>
+        <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non diam neque. Maecenas mauris massa, aliquet ut mollis fermentum, pellentesque et leo.</p>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="paper-holder">
+        <a><img width="190" src="/Mini_Project/image/image_5.jpg"></a>
+      </div>
+      <p class="paper-description">Lorem ipsum dolor sit amet</p>
+      <div class="paper-content">
+        <a class="paper-link" href="#">
+          <img src="/Mini_Project/image/image_25.jpg">
+        </a>
+        <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non diam neque. Maecenas mauris massa, aliquet ut mollis fermentum, pellentesque et leo.</p>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="paper-holder">
+        <a><img width="190" src="/Mini_Project/image/image_6.jpg"></a>
+      </div>
+      <p class="paper-description">Lorem ipsum dolor sit amet</p>
+      <div class="paper-content">
+        <a class="paper-link" href="#">
+          <img src="/Mini_Project/image/image_25.jpg">
+        </a>
+        <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non diam neque. Maecenas mauris massa, aliquet ut mollis fermentum, pellentesque et leo.</p>
+      </div>
+    </div>
+    </div>
+    <div class="paper">
+      <div class="paper-holder">
+        <a><img width="190" src="/Mini_Project/image/image_7.jpg"></a>
+      </div>
+      <p class="paper-description">Lorem ipsum dolor sit amet</p>
+      <div class="paper-content">
+        <a class="paper-link" href="#">
+          <img src="/Mini_Project/image/image_25.jpg">
+        </a>
+        <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non diam neque. Maecenas mauris massa, aliquet ut mollis fermentum, pellentesque et leo.</p>
+      </div>
+    </div>
+    </div>
+    <div class="paper">
+      <div class="paper-holder">
+        <a><img width="190" src="/Mini_Project/image/image_8.jpg"></a>
+      </div>
+      <p class="paper-description">Lorem ipsum dolor sit amet</p>
+      <div class="paper-content">
+        <a class="paper-link" href="#">
+          <img src="/Mini_Project/image/image_25.jpg">
+        </a>
+        <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non diam neque. Maecenas mauris massa, aliquet ut mollis fermentum, pellentesque et leo.</p>
+      </div>
+    </div>
+    <div class="paper">
+        <div class="paper-holder">
+            <a><img width="190" src="/Mini_Project/image/image_9.jpg"></a>
+        </div>
+        <p class="paper-description">Lorem ipsum dolor sit amet</p>
+        <div class="paper-content">
+            <a class="paper-link" href="#">
+                <img src="/Mini_Project/image/image_25.jpg">
+            </a>
+            <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non diam neque. Maecenas mauris massa, aliquet ut mollis fermentum, pellentesque et leo.</p>
+        </div>
+    </div>
+    </div>
+    <div class="paper">
+      <div class="paper-holder">
+        <a><img width="190" src="/Mini_Project/image/image_10.jpg"></a>
+      </div>
+      <p class="paper-description">Lorem ipsum dolor sit amet</p>
+      <div class="paper-content">
+        <a class="paper-link" href="#">
+          <img src="/Mini_Project/image/image_25.jpg">
+        </a>
+        <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non diam neque. Maecenas mauris massa, aliquet ut mollis fermentum, pellentesque et leo.</p>
+      </div>
+    </div>
+    </div>
+    <div class="paper">
+      <div class="paper-holder">
+        <a><img width="190" src="/Mini_Project/image/image_11.jpg"></a>
+      </div>
+      <p class="paper-description">Lorem ipsum dolor sit amet</p>
+      <div class="paper-content">
+        <a class="paper-link" href="#">
+          <img src="/Mini_Project/image/image_25.jpg">
+        </a>
+        <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non diam neque. Maecenas mauris massa, aliquet ut mollis fermentum, pellentesque et leo.</p>
+      </div>
+    </div>
+    </div>
+    <div class="paper">
+      <div class="paper-holder">
+        <a><img width="190" src="/Mini_Project/image/image_12.jpg"></a>
+      </div>
+      <p class="paper-description">Lorem ipsum dolor sit amet</p>
+      <div class="paper-content">
+        <a class="paper-link" href="#">
+          <img src="/Mini_Project/image/image_25.jpg">
+        </a>
+        <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non diam neque. Maecenas mauris massa, aliquet ut mollis fermentum, pellentesque et leo.</p>
+      </div>
+    </div>
+    </div>
+    <div class="paper">
+      <div class="paper-holder">
+        <a><img width="190" src="/Mini_Project/image/image_13.jpg"></a>
+      </div>
+      <p class="paper-description">Lorem ipsum dolor sit amet</p>
+      <div class="paper-content">
+        <a class="paper-link" href="#">
+          <img src="/Mini_Project/image/image_25.jpg">
+        </a>
+        <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non diam neque. Maecenas mauris massa, aliquet ut mollis fermentum, pellentesque et leo.</p>
+      </div>
+    </div>
+    </div>
+    <div class="paper">
+      <div class="paper-holder">
+        <a><img width="190" src="/Mini_Project/image/image_14.jpg"></a>
+      </div>
+      <p class="paper-description">Lorem ipsum dolor sit amet</p>
+      <div class="paper-content">
+        <a class="paper-link" href="#">
+          <img src="/Mini_Project/image/image_25.jpg">
+        </a>
+        <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non diam neque. Maecenas mauris massa, aliquet ut mollis fermentum, pellentesque et leo.</p>
+      </div>
+    </div>
+    </div>
+    <div class="paper">
+      <div class="paper-holder">
+        <a><img width="190" src="/Mini_Project/image/image_15.jpg"></a>
+      </div>
+      <p class="paper-description">Lorem ipsum dolor sit amet</p>
+      <div class="paper-content">
+        <a class="paper-link" href="#">
+          <img src="/Mini_Project/image/image_25.jpg">
+        </a>
+        <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non diam neque. Maecenas mauris massa, aliquet ut mollis fermentum, pellentesque et leo.</p>
+      </div>
+    </div>
+    </div>
+    <div class="paper">
+      <div class="paper-holder">
+        <a><img width="190" src="/Mini_Project/image/image_16.jpg"></a>
+      </div>
+      <p class="paper-description">Lorem ipsum dolor sit amet</p>
+      <div class="paper-content">
+        <a class="paper-link" href="#">
+          <img src="/Mini_Project/image/image_25.jpg">
+        </a>
+        <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non diam neque. Maecenas mauris massa, aliquet ut mollis fermentum, pellentesque et leo.</p>
+      </div>
+    </div>
+    </div>
+    <div class="paper">
+      <div class="paper-holder">
+        <a><img width="190" src="/Mini_Project/image/image_17.jpg"></a>
+      </div>
+      <p class="paper-description">Lorem ipsum dolor sit amet</p>
+      <div class="paper-content">
+        <a class="paper-link" href="#">
+          <img src="/Mini_Project/image/image_25.jpg">
+        </a>
+        <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non diam neque. Maecenas mauris massa, aliquet ut mollis fermentum, pellentesque et leo.</p>
+      </div>
+    </div>
+    </div>
+    <div class="paper">
+      <div class="paper-holder">
+        <a><img width="190" src="/Mini_Project/image/image_18.jpg"></a>
+      </div>
+      <p class="paper-description">Lorem ipsum dolor sit amet</p>
+      <div class="paper-content">
+        <a class="paper-link" href="#">
+          <img src="/Mini_Project/image/image_25.jpg">
+        </a>
+        <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non diam neque. Maecenas mauris massa, aliquet ut mollis fermentum, pellentesque et leo.</p>
+      </div>
+    </div>
+    </div>
+    <div class="paper">
+      <div class="paper-holder">
+        <a><img width="190" src="/Mini_Project/image/image_19.jpg"></a>
+      </div>
+      <p class="paper-description">Lorem ipsum dolor sit amet</p>
+      <div class="paper-content">
+        <a class="paper-link" href="#">
+          <img src="/Mini_Project/image/image_25.jpg">
+        </a>
+        <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non diam neque. Maecenas mauris massa, aliquet ut mollis fermentum, pellentesque et leo.</p>
+      </div>
+    </div>
+    </div>
+    <div class="paper">
+      <div class="paper-holder">
+        <a><img width="190" src="/Mini_Project/image/image_20.jpg"></a>
+      </div>
+      <p class="paper-description">Lorem ipsum dolor sit amet</p>
+      <div class="paper-content">
+        <a class="paper-link" href="#">
+          <img src="/Mini_Project/image/image_25.jpg">
+        </a>
+        <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non diam neque. Maecenas mauris massa, aliquet ut mollis fermentum, pellentesque et leo.</p>
+      </div>
+    </div>
+    </div>
+    <div class="paper">
+      <div class="paper-holder">
+        <a><img width="190" src="/Mini_Project/image/image_21.jpg"></a>
+      </div>
+      <p class="paper-description">Lorem ipsum dolor sit amet</p>
+      <div class="paper-content">
+        <a class="paper-link" href="#">
+          <img src="/Mini_Project/image/image_25.jpg">
+        </a>
+        <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non diam neque. Maecenas mauris massa, aliquet ut mollis fermentum, pellentesque et leo.</p>
+      </div>
+    </div>
+    <div class="paper">
+      <div class="paper-holder">
+        <a><img width="190" src="/Mini_Project/image/image_22.jpg"></a>
+      </div>
+      <p class="paper-description">Lorem ipsum dolor sit amet</p>
+      <div class="paper-content">
+        <a class="paper-link" href="#">
+          <img src="/Mini_Project/image/image_25.jpg">
+        </a>
+        <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non diam neque. Maecenas mauris massa, aliquet ut mollis fermentum, pellentesque et leo.</p>
+      </div>
+    </div>
+  </section>
+  <!-- 배경을 어둡게 하는 요소 -->
+  <div id="darken-background">
+    <!-- lightbox -->
+    <div id="lightbox">
+      <!-- 사용자 정보 -->
+      <div class="user-information">
+        <a class="user-information-image" href="#">
+          <img src="/Mini_Project/image/image_25.jpg">
+        </a>
+        <div class="user-information-text">
+          <h3>User</h3>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+      <!-- lightbox 내부 이미지 -->
+      <hr class="lightbox-splitter">
+      <img src="/Mini_Project/image/image_23.jpg">
+    </div>
+  </div>
+</body>
+</html>
